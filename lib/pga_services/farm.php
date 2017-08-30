@@ -3,5 +3,10 @@
     namespace PGAServices;
 
     class Farm {
-        use PGAServices;
+        use Client;
+
+        public static function init() {
+            return "tst";
+        }
+
     }

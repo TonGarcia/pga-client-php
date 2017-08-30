@@ -3,5 +3,5 @@
     namespace PGAServices;
 
     class Exploration {
-        use PGAServices { sayHello as private myPrivateHello; }
+//        use Client { sayHello as private myPrivateHello; }
     }

@@ -10,14 +10,11 @@
         require_once $filename;
     }
 
-    // Settings initialization (load it WS Services stored in YML)
-    $settings = Spyc::YAMLLoad('services.yml');
-
     /**
      * Trait PGAServices
      * Facade PGAServices Lib Module
      */
-    trait PGAServices {
+    trait Client {
 
         /**
          * PGA WS System Key for Authentication
@@ -29,6 +26,21 @@
          * Timeout to prevent so longer requests
          * @var int
          */
-        public $timeout;
+        public static $timeout;
+
+        /**
+         * WS Settings Dictionary
+         * @var array
+         */
+        public static $wsSettings;
+
+        /*
+         * Initialize it Facade static variables/attributes
+         */
+        public static function init() {
+            // Loading WS Services Settings form YML
+            PGAServices::$wsSettings = Spyc::YAMLLoad('services.yml');
+            PGAServices::$sysKey = PGAServices::$wsSettings;
+        }
 
     }
