@@ -12,9 +12,14 @@
 
     class FarmTest extends \PHPUnit_Framework_TestCase {
 
-        public function testGetFarm() {
-            $init = Farm::init();
-            $this->assertTrue(isset($init));
+        protected $farm;
+
+        protected function setUp() {
+            $this->farm = new Farm();
+        }
+
+        public function testGet() {
+
         }
 
     }

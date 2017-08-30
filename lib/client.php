@@ -39,8 +39,11 @@
          */
         public static function init() {
             // Loading WS Services Settings form YML
-            PGAServices::$wsSettings = Spyc::YAMLLoad('services.yml');
-            PGAServices::$sysKey = PGAServices::$wsSettings;
+            $settings = \Spyc::YAMLLoad(dirname(__FILE__) . '/services.yml');
+            print_r($settings);
+            $settings[0];
+//            Client::$wsSettings =
+//            Client::$sysKey = Client::$wsSettings;
         }
 
     }

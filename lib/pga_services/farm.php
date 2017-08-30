@@ -5,8 +5,19 @@
     class Farm {
         use Client;
 
-        public static function init() {
-            return "tst";
+        /**
+         * URL Built when it object is "constructed", based on Client Trait
+         * @var string
+         */
+        private $service;
+
+        function __construct() {
+            Client::init();
+
+        }
+
+        public function get($farmId) {
+
         }
 
     }
